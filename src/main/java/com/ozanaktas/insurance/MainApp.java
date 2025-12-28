@@ -88,8 +88,7 @@ public class MainApp extends Application {
     }
 
     private void showLogin() {
-        // Undo should be session-scoped. When returning to the login screen (logout),
-        // clear history so the next user cannot undo previous user's actions.
+       
         if (undoService != null) {
             undoService.clear();
         }
@@ -99,12 +98,12 @@ public class MainApp extends Application {
     }
 
     private void showDashboard(User user) {
-        // Always-available screens
+       
         Runnable onClaimsQueue = () -> showClaimsQueue(user);
         Runnable onCreateClaim = () -> showCreateClaim(user);
         Runnable onMyPolicies = () -> showMyPolicies(user);
 
-        // Activate remaining menu items (placeholder screens for now)
+       
         Runnable onManageEmployees = () -> showManageEmployees(user);
         Runnable onReports = () -> showReports(user);
         Runnable onCustomerManagement = () -> showCustomerManagement(user);
@@ -112,14 +111,14 @@ public class MainApp extends Application {
 
         var view = new DashboardView(
                 user,
-                onManageEmployees,    // manage employees ✅ (placeholder)
-                onReports,            // reports ✅ (placeholder)
-                onCustomerManagement, // customer management ✅ (placeholder)
-                onCreatePolicy,       // create quote/policy ✅ (placeholder)
-                onClaimsQueue,        // claims queue ✅
-                onMyPolicies,         // my policies ✅
-                onCreateClaim,        // create claim ✅
-                this::showLogin       // logout
+                onManageEmployees,    
+                onReports,           
+                onCustomerManagement, 
+                onCreatePolicy,      
+                onClaimsQueue,       
+                onMyPolicies,         
+                onCreateClaim,        
+                this::showLogin       
         ).getView();
 
         stage.setScene(new Scene(view, 640, 420));
