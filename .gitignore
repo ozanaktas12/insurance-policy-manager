@@ -1,0 +1,21 @@
+# ===== Maven / Java build outputs =====
+target/
+*.class
+*.log
+
+# ===== Eclipse =====
+.metadata/
+.recommenders/
+.settings/
+.project
+.classpath
+
+# ===== IntelliJ / VS Code =====
+.idea/
+.vscode/
+
+# ===== macOS =====
+.DS_Store
+
+# ===== Misc =====
+*.tmp
