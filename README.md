@@ -70,3 +70,51 @@ Designed as a portfolio/CV project to showcase:
 From project root (where `pom.xml` is):
 ```bash
 mvn clean javafx:run
+```
+
+---
+
+## Screenshots
+Images are stored under `screenshots/`.
+
+### Login
+![Login Screen](screenshots/login_screen.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admin_dashboard.png)
+
+### Admin Reports
+![Admin Reports](screenshots/admin_reports.png)
+
+### Claims Queue (FIFO) + Undo (LIFO)
+![Claims Queue](screenshots/claims_queue.png)
+
+---
+
+## Demo Users
+You can login with:
+- `admin / admin123`
+- `agent / agent123`
+- `customer / customer123`
+
+You can also create new users:
+- Admin → **Manage Employees** (add agents)
+- Agent/Admin → **Customer Management** (add customers)
+
+---
+
+## Data Structures Highlight
+
+### FIFO Queue (Claims)
+Claims are submitted by customers and processed by agents/admins in **first-in-first-out** order.
+
+### LIFO Stack (Undo)
+Actions like policy cancellation and claim processing register an undo operation on a **stack** (last action undone first).
+
+---
+
+## Notes / Future Improvements (Optional)
+- Persist data (replace in-memory repositories with DB)
+- Stronger authorization checks
+- Improved UI styling and validation
+- Export reports, search/filter lists, etc.
